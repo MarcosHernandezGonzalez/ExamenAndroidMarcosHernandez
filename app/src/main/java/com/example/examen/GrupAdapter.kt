@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.examen.data.Student
 
@@ -30,10 +31,12 @@ class GrupAdapter(private val mList: List<Student>) :
 
         val alumne = mList[position]
 
-        holder.textViewNombre.text = alumne.name + "\t"
-        holder.textViewGrup.text = alumne.group + "\t"
+        holder.textViewNombre.text = alumne.name + "   "
+        holder.textViewGrup.text = alumne.group + "   "
         holder.textViewNota.text = alumne.score.toString()
-
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context, "${alumne.name} ${alumne.group} ${alumne.score}", Toast.LENGTH_LONG).show()
+        }
     }
 
 

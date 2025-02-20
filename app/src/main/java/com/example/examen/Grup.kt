@@ -29,7 +29,6 @@ class Grup : AppCompatActivity() {
         val recyclerView = binding.recyclerView
         val studentsArray = Repository.getAllStudents(this)
         recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
-        Toast.makeText(this, studentsArray.toString(), Toast.LENGTH_LONG).show()
 
         val adapter = GrupAdapter(studentsArray)
         recyclerView.adapter = adapter
